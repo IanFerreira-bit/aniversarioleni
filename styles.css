@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffcccb, #ffc3a0, #ffb347, #ffcc33);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 15s ease infinite;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    animation: textAnimation 5s infinite alternate;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#celebrate-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.balloon {
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    bottom: -100px;
+    animation: rise 10s infinite;
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: black;
+}
+
+.red { background-color: #ff4d4d; }
+.blue { background-color: #4da6ff; }
+.green { background-color: #4dff4d; }
+.yellow { background-color: #ffff4d; }
+.purple { background-color: #bf80ff; }
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-100vh) scale(1.2); }
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    animation: fall 5s infinite;
+    z-index: 5;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes textAnimation {
+    0% { color: #333; }
+    100% { color: #ff4d4d; }
+}
+
+.firework {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,0,0,1) 50%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: fireworkExplosion 1s ease-out forwards;
+}
+
+@keyframes fireworkExplosion {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(5); opacity: 0; }
+}
+/* Estilos existentes */
+
+/* Estilo do Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffcc33;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #ffcc33;
+}
+
+
+
+
